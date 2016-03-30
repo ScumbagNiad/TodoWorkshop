@@ -1,0 +1,134 @@
+@import 'nib'
+// @import 'jeet'
+
+*
+	box-sizing: border-box;
+
+html, body
+	margin: 0px
+	padding: 0px
+	height: 100vh
+	width: 100vw
+
+body 
+	-webkit-font-smoothing: antialiased;
+	font-family: Verdana;
+	font-size: 16px;
+	background: #eee;
+	
+h1 
+	font-size:5rem
+	color: rgba(0,0,0,0.2)
+	margin:0
+	
+input
+	width:100%
+	padding: 1rem
+	box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2) 
+	font-size:1.5rem;
+	border:1px solid #ccc
+	
+@keyframes show 
+	0%
+		max-height: 0
+		
+	100%
+		max-height: 4rem
+		
+@keyframes hide
+	0%
+		max-height: 4rem				
+	100%
+		max-height: 0
+				
+
+		
+
+	
+.container
+	max-width:25rem
+	margin:0 auto
+	text-align: center
+	padding: 0 2rem 0 2rem
+
+.vertical-align
+	display: table
+	width:100%
+	height: 100%
+	table-layout: fixed
+	
+	> .top
+		display:table-cell
+		vertical-align: top
+	> .middle
+		display: table-cell
+		text-align:center
+		vertical-align: middle
+	> .bottom:
+		display: table-cell
+		vertical-align: bottom
+ul 
+	list-style: none
+	padding:0
+		
+	li
+		position: relative
+		border:1px solid #ccc
+		top: -1rem
+		margin:0rem
+		height:4rem
+		display: block
+		overflow: hidden
+		line-height: 4rem
+		animation: show 0.5s 1	
+		box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2) 
+		margin:0rem
+		background:#fff
+		
+		&.fadeaway
+			animation: hide 0.5s 1
+			button
+				&.remove
+					transform: scale(1.5)
+					background: url('/assets/images/removed_nb.png')
+					background-size:1.9rem 1.9rem
+					border: 1px solid #ca1111
+
+		&.completed
+			text-decoration: line-through
+			color: rgba(0,0,0,0.2)
+			
+			button
+				&.state
+					background: url('/assets/images/completed_nb.png')
+					background-size:1.9rem 1.9rem
+					border: 1px solid #4fb11f
+					color: #4fb11f
+		
+		button 
+			position: absolute
+			top: calc(50% - 1rem)
+			width:2rem
+			height:2rem
+			text-indent: 99999999px
+			border:0px
+			transition: 0.5s
+			border-radius:50%;
+			border:1px solid rgba(0,0,0,1)
+			outline: 0 !important
+			&.remove
+				background: url('/assets/images/remove_nb.png')
+				background-size:1.9rem 1.9rem
+				left:1rem
+			&.state
+				background: url('/assets/images/complete_nb.png')
+				background-size:1.9rem 1.9rem
+				right:1rem
+			&.state:hover
+				transform: scale(1.5)
+			&.remove:hover
+				transform: scale(1.5)
+				background: url('/assets/images/removed_nb.png')
+				background-size:1.9rem 1.9rem
+				border: 1px solid #ca1111				
+			

@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+#RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html
+</IfModule>
+
+AddType application/x-javascript .js
+AddType text/css .css
+AddType text/javascript .js
+AddType text/css .css
+AddType font/ttf .ttf
+AddType font/eot .eot
+AddType font/otf .otf
+AddType application/woff .woff
+AddType font/woff .woff
+AddType font/opentype .woff
+AddType application/x-font-woff .woff
+AddType application/vnd.ms-fontobject .eot
+AddDefaultCharset UTF-8
+Options -Indexes
